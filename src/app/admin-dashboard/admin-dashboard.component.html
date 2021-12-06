@@ -1,0 +1,84 @@
+<div class="container">
+    <h1>Admin Page</h1>
+    <div class="d-flex">
+      <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Add Item</button>
+    </div>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+      <th scope="col">price</th>
+      <th scope="col">decription</th>
+      <th scope="col">category</th>
+      <th scope="col">image</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of cruddata">
+      <td>{{row.id}}</td>
+      <td>{{row.title}}</td>
+      <td>{{row.price}}</td>
+      <td>{{row.description}}</td>
+      <td>{{row.category}}</td>
+      <td>{{row.image}}</td>
+
+      
+     
+      <td>
+        <button (click)="onedit(row)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button>&nbsp;&nbsp;&nbsp;
+        <button (click)="deleteitem(row)" type="button" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue" >
+          <div class="form-group">
+            <label for="exampleInputEmail1">Title</label>
+            <input type="text" formControlName="title" class="form-control" name="title" id="title" aria-describedby="emailHelp" placeholder="Enter title" >
+          </div>
+          <div class="form-group">
+            
+            <label for="exampleInputEmail1">Price</label>
+            <input type="text" formControlName="price" class="form-control" name="price" id="price" aria-describedby="emailHelp" placeholder="Enter price" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Description</label>
+            <input type="text" formControlName="description" class="form-control" name="description" id="description" aria-describedby="emailHelp" placeholder="Enter description">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Category</label>
+            <input type="text" formControlName="category" class="form-control" name="category" id="category" placeholder="Enter category">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Image</label>
+            <input type="text" formControlName="category" class="form-control" name="image" id="image" placeholder="Enter image">
+          </div>
+        </form>
+
+        
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="postitem()" class="btn btn-primary">Submit</button>
+       <!-- <button type="button" (click)="updateitem()" class="btn btn-primary">Update</button> -->
+      </div>
+    </div>
+  </div>
+</div>

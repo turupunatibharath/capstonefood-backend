@@ -1,0 +1,7 @@
+.container{
+    padding:10px;
+  
+    border-color: aquamarine;
+    background: rgb(160, 176, 187);
+    background: linear-gradient(90deg,rgba(229, 233, 235, 0.603) 0%, rgb(245, 245, 248) 100%);
+}

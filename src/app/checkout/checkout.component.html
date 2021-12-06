@@ -1,0 +1,27 @@
+<h1 style="text-align:center;">Address Details !!!</h1>
+<div class="container">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputPassword1">Full name</label>
+              <input type="text" class="form-control" name="fullname" placeholder="full name" [(ngModel)] ="checkout.fullname">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="text" class="form-control" name="emailId" placeholder="Enter email" [(ngModel)] ="checkout.emailId">
+              <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1">phone number</label>
+              <input type="text" class="form-control" name="phonenumber" placeholder="phone number" [(ngModel)] ="checkout.phonenumber">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1">Address</label>
+              <input type="text" class="form-control" name="address" placeholder="address" [(ngModel)] ="checkout.address">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1">pincode</label>
+              <input type="text" class="form-control" name="pincode" placeholder="pincode" [(ngModel)] ="checkout.pincode">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="checkoutNow()">Confirm</button>
+          </form>
+</div>

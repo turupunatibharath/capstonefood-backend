@@ -1,0 +1,24 @@
+<h1 class="login" style="text-align:center; margin-top: 50px;">SignUp Here !!</h1>
+<div class="container">    
+          <form class="form-group" [formGroup]="signupForm" (ngSubmit)="signUp()">
+            <div class="mb-3">
+              <label class="h3" for="exampleInputEmail1">Email address</label>
+              <input formControlName="emailId" type="text" class="form-control" name="emailId" placeholder="Enter email">
+              <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <span class="text-danger" *ngIf="signupForm.controls['emailId'].dirty && signupForm.hasError('required','emailId')">Email id is required</span>
+            </div>
+            <div class="mb-3">
+              <label class="h3"  for="exampleInputPassword1">user name</label>
+              <input formControlName="userName" type="text" class="form-control" name="userName" placeholder="user name">
+              <span class="text-danger" *ngIf="signupForm.controls['userName'].dirty && signupForm.hasError('required','userName')">username id is required</span>
+            </div>
+            <div class="mb-3">
+              <label class="h3"  for="exampleInputPassword1">Password</label>
+              <input formControlName="password" type="password" class="form-control" name="password" placeholder="Password">
+              <span class="text-danger" *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required','password')">password id is required</span>
+            </div>
+            <button type="submit" [disabled]="!signupForm.valid" class="btn btn-primary" (click)="signUp()">Sign up</button>
+          </form>
+
+        <a style="color: #fff; margin-top:10px" routerLink="/login">Already registered?click to Login!!</a>
+</div>

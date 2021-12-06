@@ -1,0 +1,44 @@
+<div claas="container">
+<div class="form-group">
+<div class="card-top container-fluid">
+  <h4>categories:-</h4>
+  <div class="container d-flex">
+ 
+    <div class="item">
+      <a (click)="filter('poori')">
+        <img style="margin-top: 30px; padding:10px;"src="https://b.zmtcdn.com/data/dish_photos/aa2/cdfe5983f9be74dc7d5770bde81f6aa2.jpg" alt="">
+        <h6 style="margin-left: 10px;">poori</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('Dosa')">
+        <img style="margin-top: 30px; padding:10px;" src="https://b.zmtcdn.com/data/pictures/9/93769/24495bb6d6300352f150f6ea95d1669c_o2_featured_v2.jpg" alt="">
+        <h6>Dosa</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('burger')">
+        <img style="margin-top: 30px; padding:10px;" src="https://b.zmtcdn.com/data/pictures/5/19704925/5f4ec9239e2d5cf58257fb68231c4f5d_o2_featured_v2.jpg?output-format=webp" alt="">
+        <h6>burger</h6>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+  <div class="row">
+    <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
+    <div class="card col-md-3">
+      <img src="{{item.image}}" alt="">
+      <h5>{{item.title}}</h5>
+      <p>{{item.description}}</p>
+      <p><strong>Price:</strong>${{item.price}}</p>
+      <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+    </div>
+  </ng-container>
+  </div>
+</div>
+
+
+
